@@ -70,17 +70,17 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="16dp"
-        android:text="escríbeme"
-        app:layout_constraintBottom_toTopOf="@+id/buttonContactMe"
+        android:text="enviar correo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSms"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/buttonContactMe"
+        android:id="@+id/buttonSms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="104dp"
-        android:text="contáctame"
+        android:text="enviar sms"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/buttonEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>

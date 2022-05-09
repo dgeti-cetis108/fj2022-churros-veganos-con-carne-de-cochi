@@ -19,9 +19,27 @@ class ImplicitIntentActivity : AppCompatActivity() {
         agregarAccionAlBotonEmail()
         agregarAccionAlBotonPhone()
         agregarAccionAlBotonCamera()
+        agregarAccionAlBotonSms()
 
         // agregar soporte para que muestre el ícono en la barra de acción
         supportActionBar!!.setIcon(R.mipmap.ic_launcher)
+    }
+
+    private fun agregarAccionAlBotonSms() {
+        // obtener el enlace al botonSms
+        val botonSms = findViewById<Button>(R.id.buttonSms)
+        botonSms.setOnClickListener {
+            // definir el mensaje y número
+            val mensaje = "Mensaje enviado desde Android"
+            val numero = "+526871234567"
+            // definir el intent para enviar mensaje
+            val intentSms = Intent().apply {
+                data = Uri.parse("smsto:$numero")
+                action = Intent.ACTION_SENDTO
+                putExtra("sms_body", mensaje)
+            }
+            startActivity(intentSms)
+        }
     }
 
     private fun agregarAccionAlBotonCamera() {
